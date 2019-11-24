@@ -1,5 +1,5 @@
 {
-    "name": "Simple Admin UI React Library",
+    "name": "smpladminui",
     "version": "1.0.0",
     "description": "React Simple Admin UI Library for npm",
     "main": "./lib/BoilerplateComponent.js",
