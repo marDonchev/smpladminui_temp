@@ -43,43 +43,6 @@ const ButtonComponent = props => {
 	);
 };
 
-// export default ButtonComponent;
-// class ButtonComponent extends React.Component {
-// 	constructor(props) {
-// 		super(props);
-// 	}
-
-// 	handleClick = e => {
-// 		if (this.props.onClick) this.props.onClick(e.target.value);
-// 	};
-
-// 	parseClasses = () => {
-// 		let classes = ["smpladmin_Button"];
-// 		if (this.props.primary) classes.push("smpladmin_primary");
-// 		if (this.props.danger) classes.push("smpladmin_danger");
-// 		return classes.join(" ");
-// 	};
-
-// 	render() {
-// 		const styles = this.props.styles || {};
-
-// 		return (
-// 			<React.Fragment>
-// 				<button
-// 					className={this.parseClasses()}
-// 					style={styles}
-// 					onClick={this.handleClick}
-// 					{...this.props}
-// 				>
-// 					{this.props.children
-// 						? this.props.children
-// 						: this.props.label}
-// 				</button>
-// 			</React.Fragment>
-// 		);
-// 	}
-// }
-
 ButtonComponent.propTypes = propTypes;
 ButtonComponent.defaultProps = defaultProps;
 
