@@ -1,0 +1,34 @@
+// Variables
+$color_Green: #4db312;
+//$color_Grey: #494c51;
+$color_Hover: #ddd;
+
+$color_Grey1: #575f71;
+$color_Grey7: #dddfe3;
+
+$size_borderWeight: 2px;
+$size_elementHeight: 17px;
+
+$fontsize_11: 0.7rem;
+$fontsize_12: 0.8rem;
+$fontsize_13: 0.85rem;
+$fontsize_14: 1rem;
+$fontsize_18: 1.1rem;
+$fontsize_24: 1.5rem;
+
+$color_Green1: #029c4f;
+$color_Red1: #ec403e;
+
+button.admin_ButtonGreen {
+	color: $color_Green1;
+}
+button.admin_ButtonGreen:hover {
+	background: rgba(110, 196, 106, 0.2);
+}
+
+button.admin_ButtonRed {
+	color: $color_Red1;
+}
+button.admin_ButtonRed:hover {
+	background: rgba(236, 64, 62, 0.2);
+}
