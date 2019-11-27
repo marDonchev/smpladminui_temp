@@ -2,7 +2,8 @@ import React from "react";
 
 import {
 	// BoilerplateComponent,
-	ButtonComponent as Button
+	ButtonComponent as Button,
+	LayoutComponent as Layout
 } from "../src/smpladminui";
 
 function App() {
@@ -26,6 +27,11 @@ function App() {
 				</Button>
 				<Button />
 				<Button disabled="disabled">Disabled</Button>
+			</div>
+
+			<h3>Layout</h3>
+			<div style={{ padding: 50 }}>
+				<Layout />
 			</div>
 		</div>
 	);
