@@ -6,10 +6,46 @@
 @import "./../fonts";
 @import "./../icons";
 
-.smpladmin_Layout {
-	border: 1px solid $color_Grey5;
+.smpladmin_Page {
+	// border: 1px solid red;
+	background-color: $color_PageBackground;
 	font-family: $font_roboto;
+	padding: $padding_Default20;
 	margin: 0;
+	height: calc(100% - #{2 * $padding_Default20});
+
+	.smpladmin_Page_HeaderRow {
+		margin-bottom: $padding_Default20;
+
+		&.smpladmin_sticky {
+			position: fixed;
+			display: block;
+			width: calc(100% - 252px);
+			top: 91px;
+			padding: #{2 * $padding_Default10} $padding_Default10 #{2 * $padding_Default10}
+				#{2 * $padding_Default10};
+			background: #eef3f6;
+			margin-left: -#{2 * $padding_Default10};
+		}
+	}
+
+	.smpladmin_Page_PageTitle {
+		color: $color_Grey2;
+		text-transform: uppercase;
+		font-family: $font_roboto;
+		font-weight: 500;
+		font-size: $fontsize_14;
+		position: relative;
+		&::after {
+			content: "";
+			height: 3px;
+			width: 60px;
+			background: $color_Grey2;
+			position: absolute;
+			top: 30px;
+			left: 0;
+		}
+	}
 
 	.smpladmin_Layout_TopHeader {
 		display: flex;
@@ -258,7 +294,7 @@
 
 		> .smpladmin_Layout_Page {
 			flex-grow: 2;
-			// padding: $padding_Default20;
+			padding: $padding_Default20;
 			position: relative;
 			overflow-y: auto;
 			overflow-x: hidden;

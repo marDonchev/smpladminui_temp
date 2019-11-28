@@ -3,7 +3,9 @@ import React from "react";
 import {
 	// BoilerplateComponent,
 	ButtonComponent as Button,
-	LayoutComponent as Layout
+	LayoutComponent as Layout,
+	PageComponent as Page,
+	DropmenuComponent as Dropmenu
 } from "../src/smpladminui";
 
 function App() {
@@ -26,12 +28,20 @@ function App() {
 					Normal Button
 				</Button>
 				<Button />
+				<Button label={"Processing..."} processing />
 				<Button disabled="disabled">Disabled</Button>
+			</div>
+
+			<h3>Dropmenu</h3>
+			<div style={{ padding: 50 }}>
+				<Dropmenu style={{ float: "right" }} />
 			</div>
 
 			<h3>Layout</h3>
 			<div style={{ padding: 50 }}>
-				<Layout />
+				<Layout>
+					<Page>This is my page</Page>
+				</Layout>
 			</div>
 		</div>
 	);

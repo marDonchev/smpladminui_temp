@@ -6,17 +6,27 @@ import "./ButtonComponent.scss";
 const propTypes = {
 	label: PropTypes.string.isRequired,
 	onClick: PropTypes.func,
-	styles: PropTypes.object,
-	disabled: PropTypes.oneOfType([PropTypes.bool, PropTypes.func])
+	style: PropTypes.object,
+	disabled: PropTypes.oneOfType([
+		PropTypes.bool,
+		PropTypes.func,
+		PropTypes.string
+	]),
+	primary: PropTypes.bool,
+	danger: PropTypes.bool,
+	processing: PropTypes.bool
 };
 
 const defaultProps = {
 	label: "Button",
-	disabled: false
+	disabled: false,
+	primary: false,
+	danger: false,
+	processing: false
 };
 
 const ButtonComponent = props => {
-	const styles = props.styles || {};
+	const style = props.style || {};
 
 	const handleClick = e => {
 		if (props.onClick) props.onClick(e.target.value);
@@ -26,6 +36,7 @@ const ButtonComponent = props => {
 		let classes = ["smpladmin_Button"];
 		if (props.primary) classes.push("smpladmin_primary");
 		if (props.danger) classes.push("smpladmin_danger");
+		if (props.processing) classes.push("smpladmin_processing");
 		return classes.join(" ");
 	};
 
@@ -33,9 +44,9 @@ const ButtonComponent = props => {
 		<React.Fragment>
 			<button
 				className={parseClasses()}
-				style={styles}
+				style={style}
 				onClick={handleClick}
-				{...props}
+				// {...props}
 			>
 				{props.children ? props.children : props.label}
 			</button>
