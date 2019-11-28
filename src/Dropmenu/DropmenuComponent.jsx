@@ -13,19 +13,21 @@ const propTypes = {
 const defaultProps = {
 	label: "Button",
 	disabled: false,
-	hover: false
-	// options: [
-	// 	{
-	// 		icon: "icon_listtype_list_grey",
-	// 		label: "View as List",
-	// 		onClick: null
-	// 	},
-	// 	{
-	// 		icon: "icon_listtype_cards_grey",
-	// 		label: "View as Cards",
-	// 		onClick: null
-	// 	}
-	// ]
+	hover: false,
+	options: [
+		{
+			icon: "icon_listtype_list_grey",
+			label: "View as List",
+			onClick: null
+		},
+		{
+			icon: "icon_listtype_cards_grey",
+			label: "View as Cards",
+			onClick: () => {
+				alert("test");
+			}
+		}
+	]
 };
 
 const DropmenuComponent = props => {
@@ -47,14 +49,23 @@ const DropmenuComponent = props => {
 				<button></button>
 
 				<div className="smpladmin_Dropmenu_Options">
-					<div className="smpladmin_Dropmenu_Option">
-						<i className="smpladmin_icon_listtype_list_grey"></i>
-						View as List
-					</div>
-					<div className="smpladmin_Dropmenu_Option">
-						<i className="smpladmin_icon_listtype_cards_grey"></i>
-						View as Cards
-					</div>
+					{props.options &&
+						props.options.map((o, oIndex) => {
+							return (
+								<div
+									key={oIndex}
+									className="smpladmin_Dropmenu_Option"
+									onClick={e =>
+										typeof o.onClick == "function"
+											? o.onClick()
+											: null
+									}
+								>
+									<i className={"smpladmin_" + o.icon}></i>
+									{o.label}
+								</div>
+							);
+						})}
 				</div>
 			</div>
 		</React.Fragment>
