@@ -52,7 +52,11 @@ function App() {
 				<Card>
 					<h1>UX Science progress experiment.</h1>
 				</Card>
-				<Card type="file" header={"MyFile.txt"}>
+				<Card
+					type="file"
+					fileType="application_msword"
+					header={"MyFile.txt"}
+				>
 					<h1>UX Science progress experiment.</h1>
 				</Card>
 			</div>
