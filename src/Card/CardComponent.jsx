@@ -6,17 +6,19 @@ import Image from "./../img/sample_image.jpg";
 import Button from "./../Button/ButtonComponent";
 
 const propTypes = {
-	label: PropTypes.string.isRequired,
-	onClick: PropTypes.func,
-	style: PropTypes.object,
-	disabled: PropTypes.oneOfType([
+	header: PropTypes.oneOfType([
 		PropTypes.bool,
 		PropTypes.func,
 		PropTypes.string
 	]),
-	primary: PropTypes.bool,
-	danger: PropTypes.bool,
-	processing: PropTypes.bool
+	footer: PropTypes.oneOfType([
+		PropTypes.bool,
+		PropTypes.func,
+		PropTypes.string
+	]),
+	style: PropTypes.object,
+	type: PropTypes.string,
+	fileType: PropTypes.string
 };
 
 const defaultProps = {
@@ -33,7 +35,8 @@ const defaultProps = {
 		</React.Fragment>
 	),
 	style: {},
-	type: "children"
+	type: "children",
+	fileType: "video_mp4"
 };
 
 const CardComponent = props => {
@@ -67,7 +70,10 @@ const CardComponent = props => {
 						props.type === "children"
 							? "smpladmin_Card_Body"
 							: props.type === "file"
-							? "smpladmin_Card_Body smpladmin_Card_BodyFile"
+							? props.fileType
+								? "smpladmin_Card_Body smpladmin_Card_BodyFile " +
+								  props.fileType
+								: "smpladmin_Card_Body smpladmin_Card_BodyFile"
 							: "smpladmin_Card_Body smpladmin_Card_BodyImage"
 					}
 					style={
