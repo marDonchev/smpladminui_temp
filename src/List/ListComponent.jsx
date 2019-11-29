@@ -5,33 +5,24 @@ import "./ListComponent.scss";
 import Button from "./../Button/ButtonComponent";
 
 const propTypes = {
-	header: PropTypes.oneOfType([
-		PropTypes.bool,
-		PropTypes.func,
-		PropTypes.string
-	]),
-	footer: PropTypes.oneOfType([
-		PropTypes.bool,
-		PropTypes.func,
-		PropTypes.string
-	]),
-	style: PropTypes.object,
-	type: PropTypes.string,
-	fileType: PropTypes.string
+	header: PropTypes.oneOfType([PropTypes.func, PropTypes.array]),
+	list: PropTypes.oneOfType([PropTypes.func, PropTypes.array]),
+	footer: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+	style: PropTypes.object
 };
 
 const defaultProps = {
-	header: ["Name1", "Structure1", "Updated on1", "Actions1"], //<React.Fragment>Root / All Static Pages</React.Fragment>,
+	header: ["Name", "Structure", "Updated on", "Actions"],
 	list: [
 		[
-			"1UX Science progress experiment with a very very long name that goes on one line for a long line",
-			"1Root / All Static Pages",
-			"115 Dec 12:45",
+			"UX Science progress experiment with a very very long name that goes on one line for a long line",
+			"Root / All Static Pages",
+			"15 Dec 12:45",
 			<React.Fragment>
 				<Button danger style={{ float: "right" }}>
-					1delete
+					delete
 				</Button>
-				<Button style={{ float: "right" }}>1edit</Button>
+				<Button style={{ float: "right" }}>edit</Button>
 				<i
 					style={{ float: "right" }}
 					className="smpladmin_icon_bookmark_on_grey"
@@ -39,14 +30,14 @@ const defaultProps = {
 			</React.Fragment>
 		],
 		[
-			"2UX Science progress experiment with a very very long name that goes on one line for a long line",
-			"2Root / All Static Pages",
-			"215 Dec 12:45",
+			"UX Science progress experiment with a very very long name that goes on one line for a long line",
+			"Root / All Static Pages",
+			"15 Dec 12:45",
 			<React.Fragment>
 				<Button danger style={{ float: "right" }}>
-					2delete
+					delete
 				</Button>
-				<Button style={{ float: "right" }}>2edit</Button>
+				<Button style={{ float: "right" }}>edit</Button>
 				<i
 					style={{ float: "right" }}
 					className="smpladmin_icon_bookmark_on_grey"
@@ -63,17 +54,6 @@ const defaultProps = {
 			<Button style={{ float: "right" }}>&lt; PREV</Button>
 		</React.Fragment>
 	),
-	// (
-	// 	<React.Fragment>
-	// 		<Button style={{ float: "left" }}>edit</Button>
-	// 		<Button style={{ float: "left" }} danger>
-	// 			delete
-	// 		</Button>
-	// 		Updated on
-	// 		<br />
-	// 		15 Dec 2017
-	// 	</React.Fragment>
-	// ),
 	style: {}
 };
 
