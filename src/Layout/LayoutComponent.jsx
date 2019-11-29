@@ -71,10 +71,6 @@ const defaultProps = {
 const LayoutComponent = props => {
 	const style = props.style || {};
 
-	const handleClick = e => {
-		if (props.onClick) props.onClick(e.target.value);
-	};
-
 	const parseClasses = () => {
 		let classes = ["smpladmin_Layout"];
 		if (props.primary) classes.push("smpladmin_primary");
@@ -105,38 +101,42 @@ const LayoutComponent = props => {
 				</div>
 				<div className="smpladmin_Layout_MidBody">
 					<div className="smpladmin_Layout_SideBar">
-						{props.sidebarElements.map((se, seIndex) => {
-							if (se.type === "item") {
-								return (
-									<div
-										key={seIndex}
-										className={
-											!se.selected
-												? "smpladmin_Layout_SideBar_item"
-												: "smpladmin_Layout_SideBar_item smpladmin_selected"
-										}
-									>
-										<i
-											className={"smpladmin_" + se.icon}
-											title={se.label}
-										></i>
-										<h1>{se.label}</h1>
-										<h2>{se.description}</h2>
-									</div>
-								);
-							}
+						{props.sidebarElements &&
+							props.sidebarElements.map((se, seIndex) => {
+								if (se.type === "item") {
+									return (
+										<div
+											key={seIndex}
+											className={
+												!se.selected
+													? "smpladmin_Layout_SideBar_item"
+													: "smpladmin_Layout_SideBar_item smpladmin_selected"
+											}
+										>
+											<i
+												className={
+													"smpladmin_" + se.icon
+												}
+												title={se.label}
+											></i>
+											<h1>{se.label}</h1>
+											<h2>{se.description}</h2>
+										</div>
+									);
+								}
 
-							if (se.type === "section") {
-								return (
-									<div
-										key={seIndex}
-										className="smpladmin_Layout_SideBar_Section"
-									>
-										{se.label}
-									</div>
-								);
-							}
-						})}
+								if (se.type === "section") {
+									return (
+										<div
+											key={seIndex}
+											className="smpladmin_Layout_SideBar_Section"
+										>
+											{se.label}
+										</div>
+									);
+								}
+								return null;
+							})}
 
 						<div className="smpladmin_Layout_Footer">
 							<span>Martin D.</span>

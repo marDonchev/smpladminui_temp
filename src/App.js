@@ -21,15 +21,15 @@ class App extends Component {
 		};
 	}
 	togglePopupVisible = e => {
-		console.info("togglePopupVisible e", e);
+		// console.info("togglePopupVisible e", e);
 		this.setState({ popupVisible: !this.state.popupVisible });
 	};
 	togglePopup2Visible = e => {
-		console.info("togglePopup2Visible e", e);
+		// console.info("togglePopup2Visible e", e);
 		this.setState({ popup2Visible: !this.state.popup2Visible });
 	};
 	togglePopup3Visible = e => {
-		console.info("togglePopup3Visible e", e);
+		// console.info("togglePopup3Visible e", e);
 		this.setState({ popup3Visible: !this.state.popup3Visible });
 	};
 

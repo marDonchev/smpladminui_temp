@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./PopupComponent.scss";
-import Button from "./../Button/ButtonComponent";
 
 const propTypes = {
 	header: PropTypes.oneOfType([
