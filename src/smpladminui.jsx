@@ -20,3 +20,5 @@ export {
 	CardComponent,
 	ListComponent
 };
+
+// TODO: Convert <i>s to Icon component + type prop for the type of the icon
