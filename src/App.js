@@ -132,6 +132,7 @@ class App extends Component {
 						onClose={this.togglePopup2Visible}
 						type={"message"}
 						time={5}
+						label={"Popup will autoclose in 5 seconds"}
 					/>
 					<Popup
 						visible={this.state.popup3Visible}

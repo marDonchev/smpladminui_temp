@@ -29,14 +29,7 @@ const defaultProps = {
 	label: "Popup Label",
 	hint: null,
 	type: "normal",
-	header: <React.Fragment>Root / All Static Pages</React.Fragment>,
-	// footer: (
-	// 	<React.Fragment>
-	// 		Updated on
-	// 		<br />
-	// 		15 Dec 2017
-	// 	</React.Fragment>
-	// ),
+	footer: null,
 	style: {},
 	time: 0, // in seconds
 	onClose: () => {}
@@ -44,10 +37,6 @@ const defaultProps = {
 
 const PopupComponent = props => {
 	const style = props.style || {};
-
-	// const handleClick = e => {
-	// 	if (props.onClick) props.onClick(e.target.value);
-	// };
 
 	const parseClasses = () => {
 		let classes = ["smpladmin_Popup"];
@@ -74,6 +63,13 @@ const PopupComponent = props => {
 		}, 1000);
 	}
 
+	const handleOnClose = () => {
+		if (props.onClose) {
+			if (timeInterval) clearInterval(timeInterval);
+			props.onClose();
+		}
+	};
+
 	return (
 		<React.Fragment>
 			{props.visible ? (
@@ -82,7 +78,7 @@ const PopupComponent = props => {
 					<div className={parseClasses()} style={style}>
 						<button
 							className="smpladmin_Popup_CloseButton"
-							onClick={props.onClose}
+							onClick={handleOnClose}
 						>
 							&times;
 						</button>
@@ -90,12 +86,10 @@ const PopupComponent = props => {
 						{props.hint ? (
 							<p className="smpladmin_Popup_Hint">{props.hint}</p>
 						) : null}
-
 						<p className={bodyClass}>
 							I'm a cool paragraph that lives inside of an even
 							cooler modal. Wins!
 						</p>
-
 						{props.footer ? (
 							<div className="smpladmin_Popup_Footer">
 								{props.footer}
@@ -104,38 +98,6 @@ const PopupComponent = props => {
 					</div>
 				</React.Fragment>
 			) : null}
-			{/* <div className={"smpladmin_Reveal"} />
-			<div className={parseClasses()} style={style}>
-				<div className="smpladmin_Card_Header">
-					{props.header}
-					<i
-						className="smpladmin_icon_bookmark_on_grey"
-						style={{ float: "right" }}
-					/>
-				</div>
-				<div
-					className={
-						props.type === "children"
-							? "smpladmin_Card_Body"
-							: props.type === "file"
-							? props.fileType
-								? "smpladmin_Card_Body smpladmin_Card_BodyFile " +
-								  props.fileType
-								: "smpladmin_Card_Body smpladmin_Card_BodyFile"
-							: "smpladmin_Card_Body smpladmin_Card_BodyImage"
-					}
-					style={
-						props.type === "image"
-							? {
-									backgroundImage: `url(${Image})`
-							  }
-							: null
-					}
-				>
-					{props.children ? props.children : null}
-				</div>
-				<div className="smpladmin_Card_Footer">{props.footer}</div>
-			</div> */}
 		</React.Fragment>
 	);
 };
