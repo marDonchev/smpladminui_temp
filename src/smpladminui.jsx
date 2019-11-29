@@ -25,4 +25,5 @@ export {
 	IconComponent
 };
 
-// TODO: Convert <i>s to Icon component + type prop for the type of the icon
+// TODO: Adding documentation
+// TODO: Fix the props of each component to be named and defaulted well
