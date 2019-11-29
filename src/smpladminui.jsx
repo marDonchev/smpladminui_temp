@@ -5,6 +5,7 @@ import PageComponent from "../src/Page/PageComponent";
 import DropmenuComponent from "../src/Dropmenu/DropmenuComponent";
 import CardComponent from "../src/Card/CardComponent";
 import ListComponent from "../src/List/ListComponent";
+import PopupComponent from "../src/Popup/PopupComponent";
 
 // Theming
 import "./_theme_default.scss";
@@ -18,7 +19,8 @@ export {
 	PageComponent,
 	DropmenuComponent,
 	CardComponent,
-	ListComponent
+	ListComponent,
+	PopupComponent
 };
 
 // TODO: Convert <i>s to Icon component + type prop for the type of the icon

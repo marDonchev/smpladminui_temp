@@ -33,8 +33,6 @@ const defaultProps = {
 const DropmenuComponent = props => {
 	const style = props.style || {};
 
-	console.info("DropmenuComponent style", style);
-
 	const parseClasses = () => {
 		let classes = ["smpladmin_Dropmenu"];
 		if (props.primary) classes.push("smpladmin_primary");

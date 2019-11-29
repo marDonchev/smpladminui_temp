@@ -76,24 +76,30 @@ const ListComponent = props => {
 		<React.Fragment>
 			<div className={parseClasses()} style={style}>
 				<table>
-					<tr>
-						{props.header &&
-							props.header.map((h, hIndex) => {
-								return <th key={hIndex}>{h}</th>;
-							})}
-					</tr>
-					{props.list
-						? props.list.map(l => {
-								let content = (
-									<tr>
-										{l.map(le => {
-											return <td>{le}</td>;
-										})}
-									</tr>
-								);
-								return content;
-						  })
-						: null}
+					<thead>
+						<tr>
+							{props.header &&
+								props.header.map((h, hIndex) => {
+									return <th key={hIndex}>{h}</th>;
+								})}
+						</tr>
+					</thead>
+					<tbody>
+						{props.list
+							? props.list.map((l, lIndex) => {
+									let content = (
+										<tr key={lIndex}>
+											{l.map((le, leIndex) => {
+												return (
+													<td key={leIndex}>{le}</td>
+												);
+											})}
+										</tr>
+									);
+									return content;
+							  })
+							: null}
+					</tbody>
 				</table>
 				<div className="smpladmin_List_Footer">
 					{props.footer ? props.footer : null}
