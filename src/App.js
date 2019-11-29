@@ -5,7 +5,8 @@ import {
 	ButtonComponent as Button,
 	LayoutComponent as Layout,
 	PageComponent as Page,
-	DropmenuComponent as Dropmenu
+	DropmenuComponent as Dropmenu,
+	CardComponent as Card
 } from "../src/smpladminui";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 					Normal Button
 				</Button>
 				<Button />
+				<Button primary>+ add new</Button>
 				<Button label={"Processing..."} processing />
 				<Button disabled="disabled">Disabled</Button>
 			</div>
@@ -42,6 +44,17 @@ function App() {
 				<Layout>
 					<Page>This is my page</Page>
 				</Layout>
+			</div>
+
+			<h3>Card</h3>
+			<div style={{ padding: 50 }}>
+				<Card type="image" />
+				<Card>
+					<h1>UX Science progress experiment.</h1>
+				</Card>
+				<Card type="file" header={"MyFile.txt"}>
+					<h1>UX Science progress experiment.</h1>
+				</Card>
 			</div>
 		</div>
 	);
