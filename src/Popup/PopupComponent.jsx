@@ -17,7 +17,7 @@ const propTypes = {
 		PropTypes.object
 	]),
 	style: PropTypes.object,
-	label: PropTypes.string,
+	label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 	hint: PropTypes.string,
 	type: PropTypes.string,
 	time: PropTypes.number,
@@ -86,8 +86,7 @@ const PopupComponent = props => {
 							<p className="smpladmin_Popup_Hint">{props.hint}</p>
 						) : null}
 						<p className={bodyClass}>
-							I'm a cool paragraph that lives inside of an even
-							cooler modal. Wins!
+							{props.children ? props.children : null}
 						</p>
 						{props.footer ? (
 							<div className="smpladmin_Popup_Footer">

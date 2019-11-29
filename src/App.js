@@ -134,11 +134,28 @@ class App extends Component {
 						type={"message"}
 						time={5}
 						label={"Popup will autoclose in 5 seconds"}
-					/>
+					>
+						This is the message body
+					</Popup>
 					<Popup
 						visible={this.state.popup3Visible}
 						onClose={this.togglePopup3Visible}
 						type={"message"}
+						label={
+							<React.Fragment>
+								<Icon
+									type="files"
+									variant="white"
+									style={{
+										marginRight: 10,
+										marginBottom: -5,
+										marginLeft: -8
+									}}
+									onClick={e => alert(e)}
+								/>
+								Popup with icon
+							</React.Fragment>
+						}
 						footer={
 							<div
 								style={{ lineHeight: 2.2, textAlign: "center" }}
@@ -146,7 +163,11 @@ class App extends Component {
 								My Footer
 							</div>
 						}
-					/>
+					>
+						<Icon type="dashboard" style={{ marginRight: 10 }} />
+						I'm a cool paragraph that lives inside of an even cooler
+						modal. Wins!
+					</Popup>
 				</div>
 
 				<h3 style={{ clear: "both" }}>Icons</h3>

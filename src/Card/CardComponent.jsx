@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import "./CardComponent.scss";
 import Image from "./../img/sample_image.jpg";
 import Button from "./../Button/ButtonComponent";
+import Icon from "./../Icon/IconComponent";
 
 const propTypes = {
 	header: PropTypes.oneOfType([
@@ -61,8 +62,9 @@ const CardComponent = props => {
 			<div className={parseClasses()} style={style}>
 				<div className="smpladmin_Card_Header">
 					{props.header}
-					<i
-						className="smpladmin_icon_bookmark_on_grey"
+					<Icon
+						type={"bookmark_off"}
+						variant={"grey"}
 						style={{ float: "right" }}
 					/>
 				</div>

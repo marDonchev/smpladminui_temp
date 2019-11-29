@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import "./ListComponent.scss";
 import Button from "./../Button/ButtonComponent";
+import Icon from "./../Icon/IconComponent";
 
 const propTypes = {
 	header: PropTypes.oneOfType([PropTypes.func, PropTypes.array]),
@@ -23,10 +24,11 @@ const defaultProps = {
 					delete
 				</Button>
 				<Button style={{ float: "right" }}>edit</Button>
-				<i
+				<Icon
+					type={"bookmark_on"}
+					variant={"grey"}
 					style={{ float: "right" }}
-					className="smpladmin_icon_bookmark_on_grey"
-				></i>
+				/>
 			</React.Fragment>
 		],
 		[

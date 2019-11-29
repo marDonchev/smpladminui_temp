@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 import "./DropmenuComponent.scss";
 
+import Icon from "./../Icon/IconComponent";
+
 const propTypes = {
 	label: PropTypes.string.isRequired,
 	onClick: PropTypes.func,
@@ -16,12 +18,12 @@ const defaultProps = {
 	hover: false,
 	options: [
 		{
-			icon: "icon_listtype_list_grey",
+			icon: <Icon type={"listtype_list"} variant={"grey"} />,
 			label: "View as List",
 			onClick: null
 		},
 		{
-			icon: "icon_listtype_cards_grey",
+			icon: <Icon type={"listtype_cards"} variant={"grey"} />,
 			label: "View as Cards",
 			onClick: () => {
 				alert("test");
@@ -59,7 +61,7 @@ const DropmenuComponent = props => {
 											: null
 									}
 								>
-									<i className={"smpladmin_" + o.icon}></i>
+									{o.icon}
 									{o.label}
 								</div>
 							);

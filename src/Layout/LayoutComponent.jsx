@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 import "./LayoutComponent.scss";
 
+import Icon from "./../Icon/IconComponent";
+
 const propTypes = {
 	//leftLabel: PropTypes.string.isRequired,
 	onClick: PropTypes.func,
@@ -24,7 +26,7 @@ const defaultProps = {
 			type: "item",
 			label: "Dashboard",
 			description: "This is explanation about the dashboard section",
-			icon: "icon_dashboard_white",
+			icon: <Icon type={"dashboard"} variant={"white"} />,
 			selected: true
 		},
 		{ type: "section", label: "MAIN SECTION" },
@@ -32,28 +34,28 @@ const defaultProps = {
 			type: "item",
 			label: "Structure",
 			description: "This is explanation about the dashboard section",
-			icon: "icon_structure_white",
+			icon: <Icon type={"structure"} variant={"white"} />,
 			selected: false
 		},
 		{
 			type: "item",
 			label: "Static Content",
 			description: "This is explanation about the dashboard section",
-			icon: "icon_static_white",
+			icon: <Icon type={"static"} variant={"white"} />,
 			selected: false
 		},
 		{
 			type: "item",
 			label: "Collections",
 			description: "This is explanation about the dashboard section",
-			icon: "icon_collections_white",
+			icon: <Icon type={"collections"} variant={"white"} />,
 			selected: false
 		},
 		{
 			type: "item",
 			label: "Files",
 			description: "This is explanation about the dashboard section",
-			icon: "icon_files_white",
+			icon: <Icon type={"files"} variant={"white"} />,
 			selected: false
 		},
 		{ type: "section", label: "DEVELOPERS SECTION" },
@@ -61,7 +63,7 @@ const defaultProps = {
 			type: "item",
 			label: "Project Settings",
 			description: "This is explanation about the dashboard section",
-			icon: "icon_projectsettings_white",
+			icon: <Icon type={"projectsettings"} variant={"white"} />,
 			selected: false
 		}
 	],
@@ -95,7 +97,7 @@ const LayoutComponent = props => {
 								style={{ width: "50%" }}
 							></div>
 						</div>
-						<i className="smpladmin_icon_logout_grey"></i>
+						<Icon type={"logout"} variant={"grey"} />
 						<h3>Martin D.</h3>
 					</div>
 				</div>
@@ -113,12 +115,7 @@ const LayoutComponent = props => {
 													: "smpladmin_Layout_SideBar_item smpladmin_selected"
 											}
 										>
-											<i
-												className={
-													"smpladmin_" + se.icon
-												}
-												title={se.label}
-											></i>
+											{se.icon ? se.icon : null}
 											<h1>{se.label}</h1>
 											<h2>{se.description}</h2>
 										</div>
@@ -140,10 +137,7 @@ const LayoutComponent = props => {
 
 						<div className="smpladmin_Layout_Footer">
 							<span>Martin D.</span>
-							<i
-								className="smpladmin_icon_settings_white"
-								title="Profile Settings"
-							></i>
+							<Icon type={"settings"} variant={"white"} />
 						</div>
 					</div>
 					<div className="smpladmin_Layout_Page">
