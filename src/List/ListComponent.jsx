@@ -21,21 +21,60 @@ const propTypes = {
 };
 
 const defaultProps = {
-	header: <React.Fragment>Root / All Static Pages</React.Fragment>,
+	header: ["Name1", "Structure1", "Updated on1", "Actions1"], //<React.Fragment>Root / All Static Pages</React.Fragment>,
+	list: [
+		[
+			"1UX Science progress experiment with a very very long name that goes on one line for a long line",
+			"1Root / All Static Pages",
+			"115 Dec 12:45",
+			<React.Fragment>
+				<Button danger style={{ float: "right" }}>
+					1delete
+				</Button>
+				<Button style={{ float: "right" }}>1edit</Button>
+				<i
+					style={{ float: "right" }}
+					className="smpladmin_icon_bookmark_on_grey"
+				></i>
+			</React.Fragment>
+		],
+		[
+			"2UX Science progress experiment with a very very long name that goes on one line for a long line",
+			"2Root / All Static Pages",
+			"215 Dec 12:45",
+			<React.Fragment>
+				<Button danger style={{ float: "right" }}>
+					2delete
+				</Button>
+				<Button style={{ float: "right" }}>2edit</Button>
+				<i
+					style={{ float: "right" }}
+					className="smpladmin_icon_bookmark_on_grey"
+				></i>
+			</React.Fragment>
+		]
+	],
 	footer: (
 		<React.Fragment>
-			<Button style={{ float: "left" }}>edit</Button>
-			<Button style={{ float: "left" }} danger>
-				delete
-			</Button>
-			Updated on
-			<br />
-			15 Dec 2017
+			<Button style={{ float: "right" }}>NEXT &gt;</Button>
+			<Button style={{ float: "right" }}>4</Button>
+			<Button style={{ float: "right" }}>3</Button>
+			<Button style={{ float: "right" }}>2</Button>
+			<Button style={{ float: "right" }}>&lt; PREV</Button>
 		</React.Fragment>
 	),
-	style: {},
-	type: "children",
-	fileType: "video_mp4"
+	// (
+	// 	<React.Fragment>
+	// 		<Button style={{ float: "left" }}>edit</Button>
+	// 		<Button style={{ float: "left" }} danger>
+	// 			delete
+	// 		</Button>
+	// 		Updated on
+	// 		<br />
+	// 		15 Dec 2017
+	// 	</React.Fragment>
+	// ),
+	style: {}
 };
 
 const ListComponent = props => {
@@ -53,60 +92,31 @@ const ListComponent = props => {
 		return classes.join(" ");
 	};
 
-	console.info("Image", Image);
 	return (
 		<React.Fragment>
 			<div className={parseClasses()} style={style}>
 				<table>
 					<tr>
-						<th>Name</th>
-						<th>Structure</th>
-						<th>Updated on</th>
-						<th>Actions</th>
+						{props.header &&
+							props.header.map((h, hIndex) => {
+								return <th key={hIndex}>{h}</th>;
+							})}
 					</tr>
-					<tr>
-						<td>
-							UX Science progress experiment with a very very long
-							name that goes on one line for a long line
-						</td>
-						<td>Root / All Static Pages</td>
-						<td>15 Dec 12:45</td>
-						<td>
-							<Button danger style={{ float: "right" }}>
-								delete
-							</Button>
-							<Button style={{ float: "right" }}>edit</Button>
-							<i
-								style={{ float: "right" }}
-								className="smpladmin_icon_bookmark_on_grey"
-							></i>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							UX Science progress experiment with a very very long
-							name that goes on one line for a long line
-						</td>
-						<td>Root / All Static Pages</td>
-						<td>15 Dec 12:45</td>
-						<td>
-							<Button danger style={{ float: "right" }}>
-								delete
-							</Button>
-							<Button style={{ float: "right" }}>edit</Button>
-							<i
-								style={{ float: "right" }}
-								className="smpladmin_icon_bookmark_off_grey"
-							></i>
-						</td>
-					</tr>
+					{props.list
+						? props.list.map(l => {
+								let content = (
+									<tr>
+										{l.map(le => {
+											return <td>{le}</td>;
+										})}
+									</tr>
+								);
+								return content;
+						  })
+						: null}
 				</table>
 				<div className="smpladmin_List_Footer">
-					<Button style={{ float: "right" }}>NEXT &gt;</Button>
-					<Button style={{ float: "right" }}>4</Button>
-					<Button style={{ float: "right" }}>3</Button>
-					<Button style={{ float: "right" }}>2</Button>
-					<Button style={{ float: "right" }}>&lt; PREV</Button>
+					{props.footer ? props.footer : null}
 				</div>
 			</div>
 
