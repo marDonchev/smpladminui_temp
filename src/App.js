@@ -8,7 +8,8 @@ import {
 	DropmenuComponent as Dropmenu,
 	CardComponent as Card,
 	ListComponent as List,
-	PopupComponent as Popup
+	PopupComponent as Popup,
+	IconComponent as Icon
 } from "../src/smpladminui";
 
 class App extends Component {
@@ -146,6 +147,51 @@ class App extends Component {
 							</div>
 						}
 					/>
+				</div>
+
+				<h3 style={{ clear: "both" }}>Icons</h3>
+				<div style={{ padding: 50 }}>
+					type = <br />
+					bookmark_off
+					<br />
+					bookmark_on
+					<br />
+					collections
+					<br />
+					dashboard
+					<br />
+					downarrow
+					<br />
+					edit
+					<br />
+					files
+					<br />
+					listtype_cards
+					<br />
+					listtype_list
+					<br />
+					logout
+					<br />
+					projectsettings
+					<br />
+					settings
+					<br />
+					static
+					<br />
+					structure
+					<br />
+					threedots
+					<br />
+					<br />
+					variant = grey / white
+					<br />
+					<br />
+					<Icon disabled="disabled" />
+					<Icon type="logout" />
+					<Icon type="listtype_cards" />
+					<Icon type="threedots" />
+					<Icon type="dashboard" />
+					<Icon type="collections" onClick={e => alert(e)} />
 				</div>
 			</div>
 		);
