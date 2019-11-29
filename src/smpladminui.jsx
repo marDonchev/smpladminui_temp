@@ -4,6 +4,7 @@ import LayoutComponent from "../src/Layout/LayoutComponent";
 import PageComponent from "../src/Page/PageComponent";
 import DropmenuComponent from "../src/Dropmenu/DropmenuComponent";
 import CardComponent from "../src/Card/CardComponent";
+import ListComponent from "../src/List/ListComponent";
 
 // Theming
 import "./_theme_default.scss";
@@ -16,5 +17,6 @@ export {
 	LayoutComponent,
 	PageComponent,
 	DropmenuComponent,
-	CardComponent
+	CardComponent,
+	ListComponent
 };

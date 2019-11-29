@@ -6,7 +6,8 @@ import {
 	LayoutComponent as Layout,
 	PageComponent as Page,
 	DropmenuComponent as Dropmenu,
-	CardComponent as Card
+	CardComponent as Card,
+	ListComponent as List
 } from "../src/smpladminui";
 
 function App() {
@@ -59,6 +60,11 @@ function App() {
 				>
 					<h1>UX Science progress experiment.</h1>
 				</Card>
+			</div>
+
+			<h3 style={{ clear: "both" }}>List</h3>
+			<div style={{ padding: 50 }}>
+				<List />
 			</div>
 		</div>
 	);
