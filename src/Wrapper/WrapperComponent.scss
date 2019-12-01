@@ -9,6 +9,7 @@
 	border: 1px dashed red;
 	padding: 20px;
 	color: $color_almostBlack;
+	font-family: $font_roboto;
 
 	/* Label */
 	label {
@@ -49,18 +50,18 @@
 		display: block;
 		box-sizing: border-box;
 		width: 100%;
-		color: #575f71;
+		color: $color_Grey2;
 		padding: 4px 4px 4px 9px;
 		height: auto;
 		border-radius: 0;
-		background: #fafafa;
+		background: $color_Grey10;
 		box-shadow: unset;
-		border: 1px solid #f1f1f1;
+		border: 1px solid $color_Grey9;
 		transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 
 		&:focus {
 			box-shadow: none;
-			border: 1px solid #3c82c6;
+			border: 1px solid $color_defaultBlue;
 		}
 	}
 
@@ -88,6 +89,58 @@
 		&:hover {
 			background-color: $color_Blue1;
 			color: white;
+		}
+	}
+
+	h1 {
+		color: $color_Grey2;
+		text-transform: uppercase;
+		font-family: $font_roboto;
+		font-weight: 500;
+		font-size: $fontsize_14;
+		position: relative;
+		padding-bottom: $padding_Default10;
+
+		&::after {
+			content: "";
+			height: 3px;
+			width: 60px;
+			background: $color_Grey2;
+			position: absolute;
+			top: 30px;
+			left: 0;
+		}
+	}
+
+	button {
+		height: 32px;
+		color: $theme_color_defaultText;
+		font-family: $font_roboto;
+		font-size: $fontsize_13;
+		font-weight: 500;
+		text-transform: uppercase;
+		padding: 0 20px;
+		cursor: pointer;
+		background-position: 5px !important;
+		background-repeat: no-repeat !important;
+		background-size: 25px !important;
+		outline: 0;
+		border: 0;
+		background: $theme_color_defaultBackground;
+		line-height: 1;
+		margin: 0;
+		display: inline-block;
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		border-radius: 3px;
+
+		@include mixin_animation(all);
+
+		&:hover {
+			color: $theme_color_defaultText_hover;
+			background-color: $theme_color_defaultBackground_hover;
 		}
 	}
 }

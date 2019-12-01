@@ -29,12 +29,14 @@
 		}
 	}
 
-	.smpladmin_Page_PageTitle {
+	.smpladmin_Page_PageTitle,
+	h1 {
 		color: $color_Grey2;
 		text-transform: uppercase;
 		font-family: $font_roboto;
 		font-weight: 500;
 		font-size: $fontsize_14;
+		padding-bottom: $padding_Default10;
 		position: relative;
 		&::after {
 			content: "";

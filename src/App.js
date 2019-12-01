@@ -45,7 +45,7 @@ class App extends Component {
 				</header>
 				<hr />
 				<h3>Buttons</h3>
-				<div style={{ padding: 50 }}>
+				<div style={{ paddingBottom: 50 }}>
 					{/* <BoilerplateComponent /> */}
 					<Button primary onClick={evt => alert("test")}>
 						My Button
@@ -61,19 +61,29 @@ class App extends Component {
 				</div>
 
 				<h3>Dropmenu</h3>
-				<div style={{ padding: 50 }}>
+				<div style={{ paddingBottom: 50 }}>
 					<Dropmenu style={{ float: "right" }} />
 				</div>
 
 				<h3>Layout</h3>
-				<div style={{ padding: 50 }}>
+				<div style={{ paddingBottom: 50 }}>
 					<Layout>
-						<Page>This is my page</Page>
+						<Page>
+							<Wrapper>
+								This is my page
+								<h1>Title 1 / H1</h1>
+								<h2>Title 2 / H2</h2>
+								<h3>Title 3 / H3</h3>
+								<h4>Title 4 / H4</h4>
+								<h5>Title 5 / H5</h5>
+								<h6>Title 6 / H6</h6>
+							</Wrapper>
+						</Page>
 					</Layout>
 				</div>
 
 				<h3>Card</h3>
-				<div style={{ padding: 50 }}>
+				<div style={{ paddingBottom: 50 }}>
 					<Card type="image" />
 					<Card>
 						<h1>UX Science progress experiment.</h1>
@@ -88,12 +98,12 @@ class App extends Component {
 				</div>
 
 				<h3 style={{ clear: "both" }}>List</h3>
-				<div style={{ padding: 50 }}>
+				<div style={{ paddingBottom: 50 }}>
 					<List />
 				</div>
 
 				<h3 style={{ clear: "both" }}>Popup</h3>
-				<div style={{ padding: 50 }}>
+				<div style={{ paddingBottom: 50 }}>
 					<Button onClick={this.togglePopupVisible}>
 						Show popup
 					</Button>
@@ -228,6 +238,12 @@ class App extends Component {
 						<a href="register.html">here</a>.
 						<hr size="1" noshade="noshade" />
 						<h1>Title 1 / H1</h1>
+						<h2>Title 2 / H2</h2>
+						<h3>Title 3 / H3</h3>
+						<h4>Title 4 / H4</h4>
+						<h5>Title 5 / H5</h5>
+						<h6>Title 6 / H6</h6>
+						<button>My Button</button>
 					</Wrapper>
 				</div>
 			</div>
