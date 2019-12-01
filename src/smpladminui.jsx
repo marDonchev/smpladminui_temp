@@ -7,6 +7,7 @@ import CardComponent from "../src/Card/CardComponent";
 import ListComponent from "../src/List/ListComponent";
 import PopupComponent from "../src/Popup/PopupComponent";
 import IconComponent from "../src/Icon/IconComponent";
+import WrapperComponent from "../src/Wrapper/WrapperComponent";
 
 // Theming
 import "./_theme_default.scss";
@@ -22,7 +23,8 @@ export {
 	CardComponent,
 	ListComponent,
 	PopupComponent,
-	IconComponent
+	IconComponent,
+	WrapperComponent
 };
 
 // TODO: Adding documentation

@@ -9,7 +9,8 @@ import {
 	CardComponent as Card,
 	ListComponent as List,
 	PopupComponent as Popup,
-	IconComponent as Icon
+	IconComponent as Icon,
+	WrapperComponent as Wrapper
 } from "../src/smpladminui";
 
 class App extends Component {
@@ -213,6 +214,21 @@ class App extends Component {
 					<Icon type="threedots" />
 					<Icon type="dashboard" />
 					<Icon type="collections" onClick={e => alert(e)} />
+				</div>
+				<h3 style={{ clear: "both" }}>Wrapper</h3>
+				<div style={{ padding: 50 }}>
+					<Wrapper>
+						<label>
+							This is label
+							<input type="text" placeholder="Project name" />
+						</label>
+						This is inside a wrapper
+						<br />
+						Don't have an account? Register one{" "}
+						<a href="register.html">here</a>.
+						<hr size="1" noshade="noshade" />
+						<h1>Title 1 / H1</h1>
+					</Wrapper>
 				</div>
 			</div>
 		);

@@ -1,0 +1,93 @@
+@import "./../reset";
+@import "./../variables";
+@import "./../theme_default";
+@import "./../mixins";
+@import "./../fonts";
+@import "./../icons";
+
+.smpladmin_Wrapper {
+	border: 1px dashed red;
+	padding: 20px;
+	color: $color_almostBlack;
+
+	/* Label */
+	label {
+		font-weight: normal;
+		line-height: 1.8;
+		display: block;
+		margin: 0;
+		color: $color_Grey1;
+		text-transform: uppercase;
+		font-size: 0.7rem;
+	}
+
+	/* Input Elements */
+	button,
+	input,
+	optgroup select,
+	[type="text"],
+	[type="password"],
+	[type="date"],
+	[type="datetime"],
+	[type="datetime-local"],
+	[type="month"],
+	[type="week"],
+	[type="email"],
+	[type="number"],
+	[type="search"],
+	[type="tel"],
+	[type="time"],
+	[type="url"],
+	[type="color"],
+	textarea {
+		overflow: visible;
+		font-family: inherit;
+		font-size: 1rem;
+		font-weight: normal;
+		line-height: 1.5;
+		margin: 0 0 1rem;
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		color: #575f71;
+		padding: 4px 4px 4px 9px;
+		height: auto;
+		border-radius: 0;
+		background: #fafafa;
+		box-shadow: unset;
+		border: 1px solid #f1f1f1;
+		transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+
+		&:focus {
+			box-shadow: none;
+			border: 1px solid #3c82c6;
+		}
+	}
+
+	::placeholder {
+		color: $color_Grey5;
+		opacity: 1; /* Firefox */
+	}
+
+	:-ms-input-placeholder {
+		/* Internet Explorer 10-11 */
+		color: $color_Grey5;
+	}
+
+	::-ms-input-placeholder {
+		/* Microsoft Edge */
+		color: $color_Grey5;
+	}
+
+	a {
+		line-height: inherit;
+		color: $color_Blue1;
+		text-decoration: none;
+		cursor: pointer;
+		@include mixin_animation(all, 0.1s);
+		&:hover {
+			background-color: $color_Blue1;
+			color: white;
+		}
+	}
+}
