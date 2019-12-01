@@ -6,16 +6,10 @@ import "./DropmenuComponent.scss";
 import Icon from "./../Icon/IconComponent";
 
 const propTypes = {
-	label: PropTypes.string.isRequired,
-	onClick: PropTypes.func,
-	style: PropTypes.object,
-	disabled: PropTypes.oneOfType([PropTypes.bool, PropTypes.func])
+	style: PropTypes.object
 };
 
 const defaultProps = {
-	label: "Button",
-	disabled: false,
-	hover: false,
 	options: [
 		{
 			icon: <Icon type={"listtype_list"} variant={"grey"} />,
@@ -45,7 +39,7 @@ const DropmenuComponent = props => {
 
 	return (
 		<React.Fragment>
-			<div className={parseClasses()} style={style}>
+			<div className={parseClasses()} style={style} {...props}>
 				<button></button>
 
 				<div className="smpladmin_Dropmenu_Options">

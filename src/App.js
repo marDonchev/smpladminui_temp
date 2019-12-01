@@ -56,8 +56,9 @@ class App extends Component {
 					</Button>
 					<Button />
 					<Button primary>+ add new</Button>
-					<Button label={"Processing..."} processing />
+					<Button processing={true} />
 					<Button disabled="disabled">Disabled</Button>
+					<Button style={{ border: "1px solid red" }}>Styled</Button>
 				</div>
 
 				<h3>Dropmenu</h3>
@@ -67,7 +68,7 @@ class App extends Component {
 
 				<h3>Layout</h3>
 				<div style={{ paddingBottom: 50 }}>
-					<Layout>
+					<Layout progress={0}>
 						<Page>
 							<Wrapper>
 								This is my page
@@ -84,14 +85,26 @@ class App extends Component {
 
 				<h3>Card</h3>
 				<div style={{ paddingBottom: 50 }}>
-					<Card type="image" />
+					<Card
+						type="image"
+						imageUrl="https://placeimg.com/400/300/any"
+					/>
 					<Card>
 						<h1>UX Science progress experiment.</h1>
 					</Card>
 					<Card
 						type="file"
 						fileType="application_msword"
-						header={"MyFile.txt"}
+						header={
+							<React.Fragment>
+								"MyFile.txt"
+								<Icon
+									type={"bookmark_off"}
+									variant={"grey"}
+									style={{ float: "right" }}
+								/>
+							</React.Fragment>
+						}
 					>
 						<h1>UX Science progress experiment.</h1>
 					</Card>

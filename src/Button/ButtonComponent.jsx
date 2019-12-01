@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "./ButtonComponent.scss";
 
 const propTypes = {
-	label: PropTypes.string.isRequired,
+	label: PropTypes.string,
 	onClick: PropTypes.func,
 	style: PropTypes.object,
 	disabled: PropTypes.oneOfType([

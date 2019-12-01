@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import "./CardComponent.scss";
 import Image from "./../img/sample_image.jpg";
 import Button from "./../Button/ButtonComponent";
-import Icon from "./../Icon/IconComponent";
 
 const propTypes = {
 	header: PropTypes.oneOfType([
@@ -21,11 +20,12 @@ const propTypes = {
 	]),
 	style: PropTypes.object,
 	type: PropTypes.string,
+	imageUrl: PropTypes.string,
 	fileType: PropTypes.string
 };
 
 const defaultProps = {
-	header: <React.Fragment>Root / All Static Pages</React.Fragment>,
+	header: <React.Fragment>Sample Card Header</React.Fragment>,
 	footer: (
 		<React.Fragment>
 			<Button style={{ float: "left" }}>edit</Button>
@@ -39,6 +39,7 @@ const defaultProps = {
 	),
 	style: {},
 	type: "children",
+	imageUrl: "",
 	fileType: "video_mp4"
 };
 
@@ -60,14 +61,7 @@ const CardComponent = props => {
 	return (
 		<React.Fragment>
 			<div className={parseClasses()} style={style}>
-				<div className="smpladmin_Card_Header">
-					{props.header}
-					<Icon
-						type={"bookmark_off"}
-						variant={"grey"}
-						style={{ float: "right" }}
-					/>
-				</div>
+				<div className="smpladmin_Card_Header">{props.header}</div>
 				<div
 					className={
 						props.type === "children"
@@ -82,7 +76,7 @@ const CardComponent = props => {
 					style={
 						props.type === "image"
 							? {
-									backgroundImage: `url(${Image})`
+									backgroundImage: `url(${props.imageUrl})`
 							  }
 							: null
 					}

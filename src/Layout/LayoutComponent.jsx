@@ -6,14 +6,14 @@ import "./LayoutComponent.scss";
 import Icon from "./../Icon/IconComponent";
 
 const propTypes = {
-	//leftLabel: PropTypes.string.isRequired,
-	onClick: PropTypes.func,
-	style: PropTypes.object,
-	disabled: PropTypes.oneOfType([
-		PropTypes.bool,
-		PropTypes.func,
-		PropTypes.string
-	])
+	leftLabel: PropTypes.string,
+	leftSublabel: PropTypes.string,
+	centerLabel: PropTypes.string,
+	centerSublabel: PropTypes.string,
+	centerRightIcon: PropTypes.object,
+	centerRightText: PropTypes.string,
+	progress: PropTypes.number,
+	style: PropTypes.object
 };
 
 const defaultProps = {
@@ -21,6 +21,9 @@ const defaultProps = {
 	leftSublabel: "Left Sublabel",
 	centerLabel: "Please login to the system first",
 	centerSublabel: "Total of 1,567,234 hits this month",
+	centerRightIcon: <Icon type={"logout"} variant={"grey"} />,
+	centerRightText: "Martin D.",
+	progress: null,
 	sidebarElements: [
 		{
 			type: "item",
@@ -66,8 +69,7 @@ const defaultProps = {
 			icon: <Icon type={"projectsettings"} variant={"white"} />,
 			selected: false
 		}
-	],
-	disabled: false
+	]
 };
 
 const LayoutComponent = props => {
@@ -91,14 +93,19 @@ const LayoutComponent = props => {
 					<div>
 						<h1>{props.centerLabel}</h1>
 						<h2>{props.centerSublabel}</h2>
-						<div className="success smpladmin_progress">
-							<div
-								className="smpladmin_progress-meter"
-								style={{ width: "50%" }}
-							></div>
-						</div>
-						<Icon type={"logout"} variant={"grey"} />
-						<h3>Martin D.</h3>
+						{props.progress != null ? (
+							<div className="success smpladmin_progress">
+								<div
+									className="smpladmin_progress-meter"
+									style={{ width: props.progress + "%" }}
+								></div>
+							</div>
+						) : null}
+
+						{props.centerRightIcon ? props.centerRightIcon : null}
+						{props.centerRightText ? (
+							<h3>{props.centerRightText}</h3>
+						) : null}
 					</div>
 				</div>
 				<div className="smpladmin_Layout_MidBody">

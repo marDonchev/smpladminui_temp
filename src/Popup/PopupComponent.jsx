@@ -4,12 +4,8 @@ import PropTypes from "prop-types";
 import "./PopupComponent.scss";
 
 const propTypes = {
-	header: PropTypes.oneOfType([
-		PropTypes.bool,
-		PropTypes.func,
-		PropTypes.string,
-		PropTypes.object
-	]),
+	label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+	hint: PropTypes.string,
 	footer: PropTypes.oneOfType([
 		PropTypes.bool,
 		PropTypes.func,
@@ -17,8 +13,6 @@ const propTypes = {
 		PropTypes.object
 	]),
 	style: PropTypes.object,
-	label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-	hint: PropTypes.string,
 	type: PropTypes.string,
 	time: PropTypes.number,
 	onClose: PropTypes.func

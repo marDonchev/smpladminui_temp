@@ -5,14 +5,12 @@ import "./PageComponent.scss";
 
 const propTypes = {
 	label: PropTypes.string.isRequired,
-	onClick: PropTypes.func,
-	styles: PropTypes.object,
-	disabled: PropTypes.oneOfType([PropTypes.bool, PropTypes.func])
+	stickyHeader: PropTypes.bool,
+	styles: PropTypes.object
 };
 
 const defaultProps = {
 	label: "Page Label",
-	disabled: false,
 	stickyHeader: false
 };
 
