@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./CardComponent.scss";
-import Image from "./../img/sample_image.jpg";
 import Button from "./../Button/ButtonComponent";
 
 const propTypes = {
